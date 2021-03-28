@@ -11,9 +11,6 @@ namespace DLL_Restaurante
         static void Main( string[] args )
         {
 
-            int [] vector = new int[1];
-            vector[0] = 10;
-            vector[1] = 20;
         }
     }
 }

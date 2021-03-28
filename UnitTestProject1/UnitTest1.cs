@@ -49,7 +49,6 @@ namespace UnitTestProject1
                              DLL_Restaurante.Plato.PRECIO_VARIOS_INGREDIENTES * cantidadDeIngredientes;
 
             Assert.AreEqual( unPlato.GetPrecio(), precioEsperado );
-
         }
 
 
@@ -65,7 +64,42 @@ namespace UnitTestProject1
                              DLL_Restaurante.Plato.PRECIO_POCOS_INGREDIENTES * cantidadDeIngredientes;
 
             Assert.AreEqual( unPlato.GetPrecio(), precioEsperado );
+        }
 
+
+        [TestMethod]
+        public void TestPrecioSinIngredientes()
+        {
+            double  precioEsperado = DLL_Restaurante.Plato.PRECIO_BASE_PLATO;
+            int     cantidadDeIngredientes = 0;
+
+            DLL_Restaurante.Plato unPlato = new DLL_Restaurante.Plato( "Agua", cantidadDeIngredientes );
+
+            Assert.AreEqual( unPlato.GetPrecio(), precioEsperado );
+        }
+
+
+        [TestMethod]
+        public void TestOpinionPromedioDePlato()
+        {
+            double puntajePromedioEsperado = (double)( 5 + 4 + 4 )/ 3;
+            DLL_Restaurante.Plato unPlato = new DLL_Restaurante.Plato( "Lomo a la mostaza", 3 );
+
+            unPlato.AgregarOpinion( 5 );
+            unPlato.AgregarOpinion( 4 );
+            unPlato.AgregarOpinion( 4 );
+
+            Assert.AreEqual( unPlato.GetOpinionPromedio(), puntajePromedioEsperado );
+        }
+
+
+        [TestMethod]
+        public void TestOpinionNulaParaPlato()
+        {
+            double puntajePromedioEsperado = 0;
+            DLL_Restaurante.Plato unPlato = new DLL_Restaurante.Plato( "Rana asada", 1 );
+
+            Assert.AreEqual( unPlato.GetOpinionPromedio(), puntajePromedioEsperado );
         }
     }
 }

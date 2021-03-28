@@ -21,6 +21,8 @@ namespace DLL_Restaurante
 
         public double GetOpinionPromedio()
         {
+            if ( this._puntajes.Count == 0 ) return 0;
+                
             double puntajeAcumulado = 0;
             foreach (int puntaje in this._puntajes) {
 		        puntajeAcumulado += puntaje;

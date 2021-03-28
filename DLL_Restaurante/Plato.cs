@@ -11,6 +11,8 @@ namespace DLL_Restaurante
         private string      _nombre;
         private int         _cantIngred;
         private int         _precioBase = PRECIO_BASE_PLATO;
+        private Opinion     _opinion = new Opinion();
+        
         public const int    PRECIO_BASE_PLATO = 300;
         public const int    CANTIDAD_POCOS_INGREDIENTES = 3;
         public const double PRECIO_POCOS_INGREDIENTES = 30;
@@ -52,5 +54,16 @@ namespace DLL_Restaurante
             return precioFinal;
         }
 
+
+        public void AgregarOpinion( int unPuntaje )
+        {
+            this._opinion.AgregarOpinion( unPuntaje );
+        }
+
+        public double GetOpinionPromedio()
+        {
+            return this._opinion.GetOpinionPromedio();
+        }
+        
     }
 }

@@ -26,10 +26,11 @@ namespace DLL_Restaurante
         {
         }
 
-        public Plato( string nombre, int cantidadDeIntegrantes )
+        public Plato( string nombre, int cantidadDeIntegrantes, Cocinero cocinero = null )
         {
             this._nombre = nombre;
             this._cantIngred = cantidadDeIntegrantes;
+            this.Cocinero = cocinero;
         }
 
 

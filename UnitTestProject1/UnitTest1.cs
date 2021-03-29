@@ -101,5 +101,28 @@ namespace UnitTestProject1
 
             Assert.AreEqual( unPlato.GetOpinionPromedio(), puntajePromedioEsperado );
         }
+
+
+        [TestMethod]
+        public void TestCocineroNuloGetMailNoFalla()
+        {
+            string nombreDelPlato = "Pollo a la parrilla";
+            DLL_Restaurante.Plato unPlato = new  DLL_Restaurante.Plato( nombreDelPlato, 5 );
+            Assert.IsNotNull( unPlato.GetMailDelCocinero() );
+        }
+
+
+        [TestMethod]
+        public void TestPlatoImprimite()
+        {
+            string nombreDelPlato = "Pollo a la parrilla";
+            string mailDelCocinero = "jorge@yahoo.com";
+            DLL_Restaurante.Plato unPlato = new  DLL_Restaurante.Plato( nombreDelPlato, 5 );
+            unPlato.Cocinero = new DLL_Restaurante.Cocinero( "Jorge", "Bustos", mailDelCocinero );
+            unPlato.AgregarOpinion( 5 );
+            unPlato.AgregarOpinion( 3 );
+
+            Assert.AreEqual( unPlato.Imprimite(), nombreDelPlato + " (4 puntos) - " + mailDelCocinero );
+        }
     }
 }

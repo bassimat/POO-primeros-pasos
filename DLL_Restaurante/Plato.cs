@@ -12,7 +12,11 @@ namespace DLL_Restaurante
         private int         _cantIngred;
         private int         _precioBase = PRECIO_BASE_PLATO;
         private Opinion     _opinion = new Opinion();
-        
+        public Cocinero     Cocinero {
+                                    get;
+                                    set;
+                            }
+
         public const int    PRECIO_BASE_PLATO = 300;
         public const int    CANTIDAD_POCOS_INGREDIENTES = 3;
         public const double PRECIO_POCOS_INGREDIENTES = 30;
@@ -65,5 +69,24 @@ namespace DLL_Restaurante
             return this._opinion.GetOpinionPromedio();
         }
         
+
+        public string GetMailDelCocinero()
+        {
+            if( null == this.Cocinero )
+                return String.Empty;
+            else
+                return this.Cocinero.Mail;
+        }
+
+        public override string ToString()
+        {
+            string str = this._nombre + " (" + this._opinion.GetOpinionPromedio() + " puntos) - " + this.GetMailDelCocinero();
+            return str;
+        }
+
+        public string Imprimite()
+        {
+            return this.ToString();
+        }
     }
 }

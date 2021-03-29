@@ -46,5 +46,35 @@ namespace DLL_Restaurante
             return mejorCalificado;
         }
 
+        public Cocinero GetCocineroPrincipal()
+        {
+            if( this._platos.Count == 0 ) throw new NullReferenceException();
+
+            Dictionary<Cocinero,int> cantPlatosPorCocinero = new Dictionary<Cocinero,int>();
+
+            foreach( Plato p in this._platos )
+            {
+                if( p.Cocinero != null )
+                {
+                    if( cantPlatosPorCocinero.ContainsKey( p.Cocinero ) )
+                        cantPlatosPorCocinero[ p.Cocinero ]++;
+                    else
+                        cantPlatosPorCocinero.Add( p.Cocinero, 1 );
+                }
+            }
+            if( cantPlatosPorCocinero.Count == 0 ) throw new NullReferenceException();
+
+            KeyValuePair<Cocinero,int> cocineroConMasPlatos = new KeyValuePair<Cocinero,int>();
+            bool primerElemento = true;
+            foreach( KeyValuePair<Cocinero,int> kvp in cantPlatosPorCocinero )
+            {
+                if( primerElemento || kvp.Value > cocineroConMasPlatos.Value )
+                {
+                    cocineroConMasPlatos = kvp;
+                    primerElemento = false;
+                }
+            }
+            return cocineroConMasPlatos.Key;
+        }
     }
 }

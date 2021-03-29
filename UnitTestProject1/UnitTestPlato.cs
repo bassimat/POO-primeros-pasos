@@ -15,7 +15,7 @@ namespace UnitTestProjectDLL_Restaurante
         /// <remarks>
         /// Por cada nombre instancia dos platos, cada uno con un constructor distinto. Luego compara que ambos tengan el mismo nombre que se les cargó.
         /// </remarks>
-        public void TestNombresDePlatos()
+        public void TestPlato_NombresAmbosConstructores()
         {
             List<string> nombreDePlatos = new List<string>();
             nombreDePlatos.Add( "Milanesas con papas fritas" );
@@ -38,7 +38,7 @@ namespace UnitTestProjectDLL_Restaurante
 
 
         [TestMethod]
-        public void TestPrecioConVariosIngredientes()
+        public void TestPlato_GetPrecioConVariosIngredientes()
         {
             double  precioEsperado = 0;
             int     cantidadDeIngredientes = 4;
@@ -53,12 +53,12 @@ namespace UnitTestProjectDLL_Restaurante
 
 
         [TestMethod]
-        public void TestPrecioConPocosIngredientes()
+        public void TestPlato_GetPrecioConPocosIngredientes()
         {
             double  precioEsperado = 0;
             int     cantidadDeIngredientes = 1;
 
-            DLL_Restaurante.Plato unPlato = new DLL_Restaurante.Plato( "Omelette", cantidadDeIngredientes );
+            DLL_Restaurante.Plato unPlato = new DLL_Restaurante.Plato( "Huevo Frito", cantidadDeIngredientes );
 
             precioEsperado = DLL_Restaurante.Plato.PRECIO_BASE_PLATO + 
                              DLL_Restaurante.Plato.PRECIO_POCOS_INGREDIENTES * cantidadDeIngredientes;
@@ -68,7 +68,7 @@ namespace UnitTestProjectDLL_Restaurante
 
 
         [TestMethod]
-        public void TestPrecioSinIngredientes()
+        public void TestPlato_GetPrecioSinIngredientes()
         {
             double  precioEsperado = DLL_Restaurante.Plato.PRECIO_BASE_PLATO;
             int     cantidadDeIngredientes = 0;
@@ -80,7 +80,7 @@ namespace UnitTestProjectDLL_Restaurante
 
 
         [TestMethod]
-        public void TestOpinionPromedioDePlato()
+        public void TestPlato_GetOpinionPromedio()
         {
             double puntajePromedioEsperado = (double)( 5 + 4 + 4 )/ 3;
             DLL_Restaurante.Plato unPlato = new DLL_Restaurante.Plato( "Lomo a la mostaza", 3 );
@@ -94,7 +94,7 @@ namespace UnitTestProjectDLL_Restaurante
 
 
         [TestMethod]
-        public void TestOpinionNulaParaPlato()
+        public void TestPlato_OpinionNulaDaPromedioCero()
         {
             double puntajePromedioEsperado = 0;
             DLL_Restaurante.Plato unPlato = new DLL_Restaurante.Plato( "Rana asada", 1 );
@@ -104,7 +104,7 @@ namespace UnitTestProjectDLL_Restaurante
 
 
         [TestMethod]
-        public void TestCocineroNuloGetMailNoFalla()
+        public void TestPlato_CocineroNuloGetMailNoFalla()
         {
             string nombreDelPlato = "Pollo a la parrilla";
             DLL_Restaurante.Plato unPlato = new  DLL_Restaurante.Plato( nombreDelPlato, 5 );
@@ -113,7 +113,7 @@ namespace UnitTestProjectDLL_Restaurante
 
 
         [TestMethod]
-        public void TestPlatoImprimite()
+        public void TestPlato_Imprimite()
         {
             string nombreDelPlato = "Pollo a la parrilla";
             string mailDelCocinero = "jorge@yahoo.com";

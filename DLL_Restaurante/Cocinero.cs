@@ -33,7 +33,7 @@ namespace DLL_Restaurante
         public string Apellido
         {
             get{ return this._apellido; }
-            set{ this._nombre = value; }
+            set{ this._apellido = value; }
         }
         
         public string Mail
@@ -41,6 +41,11 @@ namespace DLL_Restaurante
             get{ return this._mail; }
             set{ this._mail = value; }
         }
-        
+
+        public override string ToString()
+        {
+            string str = this.Nombre +" "+ this.Apellido +" ("+ this.Mail +")";
+            return str;
+        }
     }
 }

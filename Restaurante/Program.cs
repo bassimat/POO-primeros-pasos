@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DLL_Restaurante
+namespace Restaurante
 {
     class Program
     {
         static void Main( string[] args )
         {
 
-            int [] vector = new int[1];
-            vector[0] = 10;
-            vector[1] = 20;
+            DLL_Restaurante.Plato unPlato = new  DLL_Restaurante.Plato("Pollo a la parrilla", 5 );
+            unPlato.Cocinero = new DLL_Restaurante.Cocinero( "Jorge", "Bustos", "jorge@yahoo.com" );
+
+            Console.WriteLine( unPlato.ToString() );
+            Console.ReadKey();
         }
     }
 }

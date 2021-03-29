@@ -6,17 +6,43 @@ using System.Threading.Tasks;
 
 namespace DLL_Restaurante
 {
-    class Plato
+    public class Plato
     {
-        private string _nombre;
-        private int _precioBase;
+        private string      _nombre;
+        private int         _cantIngred;
+        private int         _precioBase;
 
-        public void Plato()
+        public Plato()
         {
         }
 
-        public void Plato( string nombre, int cantDeIntegrantes )
+        public Plato( string nombre, int cantidadDeIntegrantes )
         {
+            this._nombre = nombre;
+            this._cantIngred = cantidadDeIntegrantes;
         }
+
+
+
+        public Cocinero Cocinero
+        {
+            get;
+            set;
+        }
+
+        public string GetMailDelCocinero()
+        {
+            if( null == this.Cocinero )
+                return String.Empty;
+            else
+                return this.Cocinero.Mail;
+        }
+
+        public override string ToString()
+        {
+            string str = this._nombre + " " + "(7 puntos)" + " - " + this.GetMailDelCocinero();
+            return str;
+        }
+
     }
 }

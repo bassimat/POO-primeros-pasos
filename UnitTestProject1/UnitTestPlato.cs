@@ -2,10 +2,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace UnitTestProject1
+namespace UnitTestProjectDLL_Restaurante
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTestPlato
     {
 
         [TestMethod]

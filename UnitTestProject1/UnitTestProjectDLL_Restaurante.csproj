@@ -6,7 +6,7 @@
     <ProjectGuid>{DDD1BF3E-76B6-43FE-AE8F-1CD37021AE5A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitTestProject1</RootNamespace>
+    <RootNamespace>UnitTestProjectDLL_Restaurante</RootNamespace>
     <AssemblyName>UnitTestProject1</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -50,7 +50,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="UnitTestCarta.cs" />
+    <Compile Include="UnitTestPlato.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carta.cs" />
     <Compile Include="Opinion.cs" />
     <Compile Include="Cocinero.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,3 +54,4 @@
   </Target>
   -->
 </Project>
+

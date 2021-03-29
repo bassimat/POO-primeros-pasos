@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurante", "Restaurante\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLL_Restaurante", "DLL_Restaurante\DLL_Restaurante.csproj", "{DA5940B4-84D0-429C-A633-834D12AFC20A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{DDD1BF3E-76B6-43FE-AE8F-1CD37021AE5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{DA5940B4-84D0-429C-A633-834D12AFC20A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA5940B4-84D0-429C-A633-834D12AFC20A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA5940B4-84D0-429C-A633-834D12AFC20A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDD1BF3E-76B6-43FE-AE8F-1CD37021AE5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD1BF3E-76B6-43FE-AE8F-1CD37021AE5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD1BF3E-76B6-43FE-AE8F-1CD37021AE5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD1BF3E-76B6-43FE-AE8F-1CD37021AE5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
